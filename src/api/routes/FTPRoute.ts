@@ -3,4 +3,7 @@ import { FTPController as Controller} from '../controllers/FTPController';
 
 export const FTPRoute = Router();
 
-FTPRoute.get('/upload', Controller.upload);
+FTPRoute.post('/upload', Controller.upload);
+FTPRoute.post('/download', Controller.download);
+FTPRoute.post('/ls', Controller.ls);
+FTPRoute.post('/delete', Controller.delete);

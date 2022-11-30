@@ -4,8 +4,8 @@ import body_parser from 'body-parser';
 import cors from 'cors';
 import { defaultRoute } from './api/routes';
 import { UserController } from "./api/controllers/UserController";
-import {FTPController} from "./api/controllers/FTPController";
-
+// @ts-ignore
+const fileupload = require('express-fileupload');
 dotenv.config();
 
 // create server
@@ -13,6 +13,10 @@ const app: Express = express();
 app.use(body_parser.urlencoded({ extended: true }))
 app.use(body_parser.json())
 app.use(cors())
+app.use(fileupload({
+  useTempFiles : true,
+  tempFileDir : '/tmp/'
+}))
 const port = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
@@ -24,7 +28,6 @@ routes.use(defaultRoute);
 
 // main endpoint for api
 app.use('/api', routes)
-FTPController.connect()
 // auth endpoint
 app.post('/auth', UserController.auth);
 
