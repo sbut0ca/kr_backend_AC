@@ -14,6 +14,7 @@ export class FTPController {
     //            body.path - путь для загрузки
     public static upload = async (req: any, res: Response) => {
         const file = req.files.file;
+
         ftp.connect(config)
         ftp.upload(file.tempFilePath, `${basePath}/${req.body.path}/${file.name}`, (err: any) => {
             if (err) {

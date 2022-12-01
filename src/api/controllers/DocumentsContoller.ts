@@ -12,7 +12,7 @@ export class DocumentsController extends IRest {
                 'DocumentDataType'
             ]
         });
-        res.send(data);
+        res.status(200).send(data);
     }
     static async getByID(req: Request, res: Response): Promise<void> {
         const data = await models.Documents.findByPk(req.params.id, {
