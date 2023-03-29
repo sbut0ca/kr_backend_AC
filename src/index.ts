@@ -6,8 +6,7 @@ import { UserController } from "./api/controllers/UserController";
 // @ts-ignore
 const fileupload = require('express-fileupload');
 if (process.env.NODE_ENV !== 'production') {
-  import dotenv from 'dotenv';
-  dotenv.config();
+  require('dotenv').config();
 }
 
 // create server
