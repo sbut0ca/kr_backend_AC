@@ -1,0 +1,20 @@
+name: 'deploy'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          git_remote_url: 'ssh://dokku@dokku.vseteam.ru:22/artem'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          branch: master
