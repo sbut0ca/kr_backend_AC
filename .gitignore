@@ -1,2 +1,6 @@
 # Project exclude paths
-/node_modules/
+node_modules
+.env
+docker-compose.yml
+.replit
+replit.nix
