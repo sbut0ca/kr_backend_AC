@@ -3,8 +3,9 @@ import { DocumentsController as Controller} from '../controllers/DocumentsContol
 
 export const DocumentsRoute = Router();
 
-DocumentsRoute.get('/', Controller.getAll);
-DocumentsRoute.get('/:id', Controller.getByID);
-DocumentsRoute.post('/', Controller.create);
-DocumentsRoute.put('/:id', Controller.update);
-DocumentsRoute.delete('/:id', Controller.delete);
+// DocumentsRoute.get('/', Controller.getAll);
+// DocumentsRoute.get('/:id', Controller.getByID);
+DocumentsRoute.get('/test/:id', Controller.test);
+// DocumentsRoute.post('/', Controller.create);
+// DocumentsRoute.put('/:id', Controller.update);
+// DocumentsRoute.delete('/:id', Controller.delete);

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FTPRoute = void 0;
+const express_1 = require("express");
+const FTPController_1 = require("../controllers/FTPController");
+exports.FTPRoute = (0, express_1.Router)();
+exports.FTPRoute.post('/upload', FTPController_1.FTPController.upload);
+exports.FTPRoute.post('/download', FTPController_1.FTPController.download);
+exports.FTPRoute.post('/ls', FTPController_1.FTPController.ls);
+exports.FTPRoute.post('/delete', FTPController_1.FTPController.delete);

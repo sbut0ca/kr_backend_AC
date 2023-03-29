@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogiRoute = void 0;
+const express_1 = require("express");
+exports.LogiRoute = (0, express_1.Router)();
+// LogiRoute.get('/', Controller.getAll);
+// LogiRoute.get('/:id', Controller.getByID);
+// LogiRoute.post('/', Controller.create);
+// LogiRoute.put('/:id', Controller.update);
+// LogiRoute.delete('/:id', Controller.delete);

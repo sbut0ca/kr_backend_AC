@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogTypeRoute = void 0;
+const express_1 = require("express");
+exports.LogTypeRoute = (0, express_1.Router)();
+// LogTypeRoute.get('/', Controller.getAll);
+// LogTypeRoute.get('/:id', Controller.getByID);
+// LogTypeRoute.post('/', Controller.create);
+// LogTypeRoute.put('/:id', Controller.update);
+// LogTypeRoute.delete('/:id', Controller.delete);
