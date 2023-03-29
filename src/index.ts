@@ -1,12 +1,14 @@
 import express, { Express } from 'express';
-import dotenv from 'dotenv';
 import body_parser from 'body-parser';
 import cors from 'cors';
 import { defaultRoute } from './api/routes';
 import { UserController } from "./api/controllers/UserController";
 // @ts-ignore
 const fileupload = require('express-fileupload');
-dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  import dotenv from 'dotenv';
+  dotenv.config();
+}
 
 // create server
 const app: Express = express();
